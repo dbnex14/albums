@@ -1,24 +1,33 @@
 // Import libraries for making registerComponent
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 
-// Make a registerComponent
-const Header = () => {
-  //2nd destructuring - makes textStyle be equal to the
-  //fontSize object in styles below
-  const { textStyle } = styles;
+const Header = (props) => {
+  const { textStyle, viewStyle } = styles;
 
-  //3rd, set style of Text to be equal to textStyle.  Note
-  // the sintax we use in curly braces.  It is called "props"
-  // which is short for properties.  We will talk about props
-  // a lot, but now we focus just on styling.
-  return <Text style={textStyle}>Albums!</Text>;
+  return (
+    <View style={viewStyle}>
+      <Text style={textStyle}>{props.headerText}</Text>
+    </View>
+  );
 };
 
-// 1st create styles object with a textStyle object
+// add shadow
 const styles = {
+  viewStyle: {
+    backgroundColor: '#F8F8F8',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 60,
+    paddingTop: 15,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    elevation: 2,
+    position: 'relative'
+  },
   textStyle: {
-    fontSize: 40
+    fontSize: 20
   }
 };
 
