@@ -17,6 +17,7 @@ const Button = ({ onPress, children }) => {
   );
 };
 
+// add styles
 const styles = {
   textStyle: {
     alignSelf: 'center',

@@ -12,7 +12,7 @@ const Header = (props) => {
   );
 };
 
-// add shadow
+// add styles for shadow
 const styles = {
   viewStyle: {
     backgroundColor: '#F8F8F8',
