@@ -1,13 +1,15 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Linking } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
+import Button from './Button';
 
 const AlbumDetail = ({ album }) => {
-  // destructure inside a function body and tell it that we want the title,
-  // the artist and the thumbnail_image from the album object.  Then we can remove
-  // all the references to props.album below.
-  const { title, artist, thumbnail_image, image } = album;
+  // destructure inside a function body and tell it that we
+  // want the title, the artist and the thumbnail_image from
+  // the album object.  Then we can remove all the references
+  // to props.album below.
+  const { title, artist, thumbnail_image, image, url } = album;
   const {
     thumbnailStyle,
     headerContentStyle,
@@ -34,6 +36,11 @@ const AlbumDetail = ({ album }) => {
           style={imageStyle}
           source={{ uri: image }}
         />
+      </CardSection>
+      <CardSection>
+        <Button onPress={() => Linking.openURL(url)}>
+          Buy Now
+        </Button>
       </CardSection>
     </Card>
   );
